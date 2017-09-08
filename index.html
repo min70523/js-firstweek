@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		document.write('<table border=1 cellspacing=0 cellpadding=10px>')
+		for(var i=1;i<=9;i++){
+			document.write('<tr>')
+			for(var j=1;j<=i;j++){
+				if(j%2==0){
+					document.write('<td bgcolor=pink>'+j+'*'+i+'</td>')
+				}else{
+					document.write('<td bgcolor=skyblue>'+j+'*'+i+'</td>')
+				}
+				
+			}			
+			document.write('</tr>')
+		}
+		document.write('</table>')
+		
+		document.write('<table border=1 cellspacing=0 cellpadding=10px>')
+		for(var i=1;i<=9;i++){
+			if(i%2==0){
+				document.write('<tr bgcolor=pink>')
+			}else{
+				document.write('<tr bgcolor=skyblue>')
+			}
+			
+			for(var j=1;j<=i;j++){	
+					document.write('<td>'+j+'*'+i+'</td>')
+			}			
+			document.write('</tr>')
+		}
+		document.write('</table>')
+	</script>
+		
+</head>
+<body>
+	
+</body>
+</html>
