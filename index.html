@@ -4,35 +4,62 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<script>
-		document.write('<table border=1 cellspacing=0 cellpadding=10px>')
-		for(var i=1;i<=9;i++){
-			document.write('<tr>')
-			for(var j=1;j<=i;j++){
-				if(j%2==0){
-					document.write('<td bgcolor=pink>'+j+'*'+i+'</td>')
-				}else{
-					document.write('<td bgcolor=skyblue>'+j+'*'+i+'</td>')
-				}
+		// document.write('<table border=1 cellspacing=0 cellpadding=10px>')
+		// for(var i=1;i<=9;i++){
+		// 	document.write('<tr>')
+		// 	for(var j=1;j<=i;j++){
+		// 		if(j%2==0){
+		// 			document.write('<td bgcolor=pink>'+j+'*'+i+'</td>')
+		// 		}else{
+		// 			document.write('<td bgcolor=skyblue>'+j+'*'+i+'</td>')
+		// 		}
 				
-			}			
-			document.write('</tr>')
-		}
-		document.write('</table>')
+		// 	}			
+		// 	document.write('</tr>')
+		// }
+		// document.write('</table>')
 		
-		document.write('<table border=1 cellspacing=0 cellpadding=10px>')
-		for(var i=1;i<=9;i++){
-			if(i%2==0){
-				document.write('<tr bgcolor=pink>')
-			}else{
-				document.write('<tr bgcolor=skyblue>')
-			}
+		// document.write('<table border=1 cellspacing=0 cellpadding=10px>')
+		// for(var i=1;i<=9;i++){
+		// 	if(i%2==0){
+		// 		document.write('<tr bgcolor=pink>')
+		// 	}else{
+		// 		document.write('<tr bgcolor=skyblue>')
+		// 	}
 			
-			for(var j=1;j<=i;j++){	
-					document.write('<td>'+j+'*'+i+'</td>')
-			}			
-			document.write('</tr>')
+		// 	for(var j=1;j<=i;j++){	
+		// 			document.write('<td>'+j+'*'+i+'</td>')
+		// 	}			
+		// 	document.write('</tr>')
+		// }
+		// document.write('</table>')
+		// 
+		//新方法，只输出一次，就可以实现表格
+		//
+		table(9,9);
+		function table(rows,cols){
+		var table='<table border=1 cellspacing=0 cellpadding=5px>';
+		var color;
+		for(i=1;i<=rows;i++){
+			if(i%2==0){
+				color='pink';
+			}else{
+				color='skyblue';
+			}
+			table+='<tr >';     //连接行
+			for(j=1;j<=i;j++){
+				if(j%2==0){
+				color='pink';
+			}else{
+				color='skyblue';
+			}
+				table+='<td bgcolor='+color+'>'+j+'*'+i+'='+(i*j)+'</td>';  
+				//连接列
+			}
+			table+='</tr>'
 		}
-		document.write('</table>')
+		document.write(table);
+		}
 	</script>
 		
 </head>
